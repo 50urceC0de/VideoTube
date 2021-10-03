@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Setting";
+}
+<div class="settingsContainer column">
+
+    <div class="formSection">
+        <div class="message">
+            <?php echo $detailsMessage; ?>
+        </div>
+        @Html.Raw(ViewBag.data)
+    </div>
+
+    <div class="formSection">
+        <div class="message">
+            <?php echo $passwordMessage; ?>
+        </div>
+        @Html.Raw(ViewBag.passwordForm)
+    </div>
+      
+</div>

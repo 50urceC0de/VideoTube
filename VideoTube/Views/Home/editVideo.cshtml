@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "EditVideo";
+}
+
+<script src="assets/js/editVideoActions.js"></script>
+<div class="editVideoContainer column">
+
+    <div class="message">
+        @Html.Raw(ViewBag.msg)
+    </div>
+
+    <div class="topSection">
+        @Html.Raw(ViewBag.vidPlayer)
+
+        @Html.Raw(ViewBag.thumbnail)
+    </div>
+
+    <div class="bottomSection">
+        @Html.Raw(ViewBag.form)
+    </div>
+
+</div>

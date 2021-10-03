@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "watch";
+}
+
+<script src="assets/js/videoPlayerActions.js"></script>
+<script src="assets/js/commentActions.js"></script>
+
+<div class="watchLeftColumn">
+
+    @Html.Raw(ViewBag.palyer)
+    @Html.Raw(ViewBag.palyerInfo)
+    @Html.Raw(ViewBag.comment)
+
+</div>
+
+<div class="suggestions">
+    @Html.Raw(ViewBag.vidGrid)
+</div>
+<script src="~/assets/js/VideoPlayer.js"></script>

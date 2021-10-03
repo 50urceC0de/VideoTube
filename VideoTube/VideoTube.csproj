@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BBEC785-4AC9-48AD-B475-E873B29399D0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoTube</RootNamespace>
+    <AssemblyName>VideoTube</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.SqlClient, Version=2.0.20168.4, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.SqlClient.2.1.3\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.21.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.21.1\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.8.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.8.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.6.8.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.8.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.8.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.8.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.4.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.4.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SettingController.cs" />
+    <Compile Include="Controllers\SignInController.cs" />
+    <Compile Include="Controllers\SignUpController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\upload.ashx.cs">
+      <DependentUpon>upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Classess\Account.cs" />
+    <Compile Include="Models\Classess\ButtonProvider.cs" />
+    <Compile Include="Models\Classess\Comment.cs" />
+    <Compile Include="Models\Classess\CommentControls.cs" />
+    <Compile Include="Models\Classess\CommentSection.cs" />
+    <Compile Include="Models\Classess\ConnectionConfiguration.cs" />
+    <Compile Include="Models\Classess\Constants.cs" />
+    <Compile Include="Models\Classess\CustomExtensions.cs" />
+    <Compile Include="Models\Classess\VideoProcessor.cs" />
+    <Compile Include="Models\Services\IConnectionConfiguration.cs" />
+    <Compile Include="Models\Classess\LikedVideosProvider.cs" />
+    <Compile Include="Models\Classess\NavigationMenuProvider.cs" />
+    <Compile Include="Models\Classess\ProfileData.cs" />
+    <Compile Include="Models\Classess\ProfileGenerator.cs" />
+    <Compile Include="Models\Classess\SearchResultsProvider.cs" />
+    <Compile Include="Models\Classess\SelectThumbnail.cs" />
+    <Compile Include="Models\Classess\SettingsFormProvider.cs" />
+    <Compile Include="Models\Classess\SubscriptionsProvider.cs" />
+    <Compile Include="Models\Classess\TrendingProvider.cs" />
+    <Compile Include="Models\Classess\User.cs" />
+    <Compile Include="Models\Classess\Video.cs" />
+    <Compile Include="Models\Classess\VideoDetailsFormProvider.cs" />
+    <Compile Include="Models\Classess\VideoGrid.cs" />
+    <Compile Include="Models\Classess\VideoGridItem.cs" />
+    <Compile Include="Models\Classess\VideoInfoControls.cs" />
+    <Compile Include="Models\Classess\VideoInfoSection.cs" />
+    <Compile Include="Models\Classess\VideoPlayer.cs" />
+    <Compile Include="Models\Classess\VideoUploadData.cs" />
+    <Compile Include="Models\Comments.cs" />
+    <Compile Include="Models\Subcription.cs" />
+    <Compile Include="Models\Thumbnail.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\Videos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\resumable.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\coverPhotos\default-cover-photo.jpg" />
+    <Content Include="assets\images\icons\history.png" />
+    <Content Include="assets\images\icons\home.png" />
+    <Content Include="assets\images\icons\loading-spinner.gif" />
+    <Content Include="assets\images\icons\logout.png" />
+    <Content Include="assets\images\icons\menu.png" />
+    <Content Include="assets\images\icons\pause.png" />
+    <Content Include="assets\images\icons\resume.png" />
+    <Content Include="assets\images\icons\search.png" />
+    <Content Include="assets\images\icons\settings.png" />
+    <Content Include="assets\images\icons\subscriptions.png" />
+    <Content Include="assets\images\icons\thumb-down-active.png" />
+    <Content Include="assets\images\icons\thumb-down.png" />
+    <Content Include="assets\images\icons\thumb-up-active.png" />
+    <Content Include="assets\images\icons\thumb-up.png" />
+    <Content Include="assets\images\icons\trending.png" />
+    <Content Include="assets\images\icons\upload.png" />
+    <Content Include="assets\images\icons\VideoTubeLogo.png" />
+    <Content Include="assets\images\profilePictures\default-female.png" />
+    <Content Include="assets\images\profilePictures\default-male.png" />
+    <Content Include="assets\images\profilePictures\default.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\commentActions.js" />
+    <Content Include="assets\js\commonActions.js" />
+    <Content Include="assets\js\editVideoActions.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\resumable.js" />
+    <Content Include="assets\js\resumableUpload.js" />
+    <Content Include="assets\js\userActions.js" />
+    <Content Include="assets\js\VideoPlayer.js" />
+    <Content Include="assets\js\videoPlayerActions.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="ffmpeg\windows\ffmpeg.exe" />
+    <Content Include="ffmpeg\windows\ffprobe.exe" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ffmpeg\linux\ffmpeg" />
+    <Content Include="ffmpeg\linux\ffprobe" />
+    <Content Include="ffmpeg\mac\regular-xampp\ffmpeg" />
+    <Content Include="ffmpeg\mac\regular-xampp\ffprobe" />
+    <Content Include="ffmpeg\mac\xampp-VM\ffmpeg" />
+    <Content Include="ffmpeg\mac\xampp-VM\ffprobe" />
+    <Content Include="Handler\upload.ashx" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="uploads\videos\5bb0ba5665d24.mp4" />
+    <Content Include="uploads\videos\5bb7a68bd6276.mp4" />
+    <Content Include="uploads\videos\5bba23f8e2f8c.mp4" />
+    <Content Include="uploads\videos\5bba243098e18.mp4" />
+    <Content Include="uploads\videos\5bba245a573a3.mp4" />
+    <Content Include="uploads\videos\5bba247a83798.mp4" />
+    <Content Include="uploads\videos\5bba2c77ae7d8.mp4" />
+    <Content Include="uploads\videos\5bba2ca8896ee.mp4" />
+    <Content Include="uploads\videos\5bba2cd313ebd.mp4" />
+    <Content Include="uploads\videos\5bba2d55ee97e.mp4" />
+    <Content Include="uploads\videos\5bba2d7a09460.mp4" />
+    <Content Include="uploads\videos\5bc34961194c9.mp4" />
+    <Content Include="uploads\videos\5bc349cfcac2e.mp4" />
+    <Content Include="uploads\videos\thumbnails\154-5bb0ba5aa936c.jpg" />
+    <Content Include="uploads\videos\thumbnails\154-5bb0ba5ad39b8.jpg" />
+    <Content Include="uploads\videos\thumbnails\154-5bb0ba5b1b7a3.jpg" />
+    <Content Include="uploads\videos\thumbnails\155-5bb7a68e7dccb.jpg" />
+    <Content Include="uploads\videos\thumbnails\155-5bb7a68e9fa5f.jpg" />
+    <Content Include="uploads\videos\thumbnails\155-5bb7a68ecb38c.jpg" />
+    <Content Include="uploads\videos\thumbnails\156-5bba23fbd942d.jpg" />
+    <Content Include="uploads\videos\thumbnails\156-5bba23fc048bd.jpg" />
+    <Content Include="uploads\videos\thumbnails\156-5bba23fc30d48.jpg" />
+    <Content Include="uploads\videos\thumbnails\157-5bba24337107c.jpg" />
+    <Content Include="uploads\videos\thumbnails\157-5bba243393bec.jpg" />
+    <Content Include="uploads\videos\thumbnails\157-5bba2433c32f8.jpg" />
+    <Content Include="uploads\videos\thumbnails\158-5bba245c7fee8.jpg" />
+    <Content Include="uploads\videos\thumbnails\158-5bba245c9c372.jpg" />
+    <Content Include="uploads\videos\thumbnails\158-5bba245cbf323.jpg" />
+    <Content Include="uploads\videos\thumbnails\159-5bba247ebfcc4.jpg" />
+    <Content Include="uploads\videos\thumbnails\159-5bba247ee4ad9.jpg" />
+    <Content Include="uploads\videos\thumbnails\159-5bba247f22bfa.jpg" />
+    <Content Include="uploads\videos\thumbnails\160-5bba2c7c483e6.jpg" />
+    <Content Include="uploads\videos\thumbnails\160-5bba2c7c77d22.jpg" />
+    <Content Include="uploads\videos\thumbnails\160-5bba2c7cbc94b.jpg" />
+    <Content Include="uploads\videos\thumbnails\161-5bba2cb995c1d.jpg" />
+    <Content Include="uploads\videos\thumbnails\161-5bba2cba21a63.jpg" />
+    <Content Include="uploads\videos\thumbnails\161-5bba2cbae6700.jpg" />
+    <Content Include="uploads\videos\thumbnails\162-5bba2cdb87604.jpg" />
+    <Content Include="uploads\videos\thumbnails\162-5bba2cdbc068a.jpg" />
+    <Content Include="uploads\videos\thumbnails\162-5bba2cdc29934.jpg" />
+    <Content Include="uploads\videos\thumbnails\163-5bba2d59ae676.jpg" />
+    <Content Include="uploads\videos\thumbnails\163-5bba2d59d15fb.jpg" />
+    <Content Include="uploads\videos\thumbnails\163-5bba2d5a0cd2b.jpg" />
+    <Content Include="uploads\videos\thumbnails\164-5bba2d7cb0414.jpg" />
+    <Content Include="uploads\videos\thumbnails\164-5bba2d7ccc263.jpg" />
+    <Content Include="uploads\videos\thumbnails\164-5bba2d7cf3ce6.jpg" />
+    <Content Include="uploads\videos\thumbnails\165-5bc34972845d3.jpg" />
+    <Content Include="uploads\videos\thumbnails\165-5bc3497311ce9.jpg" />
+    <Content Include="uploads\videos\thumbnails\165-5bc34973cdefc.jpg" />
+    <Content Include="uploads\videos\thumbnails\166-5bc349d5ebc82.jpg" />
+    <Content Include="uploads\videos\thumbnails\166-5bc349d63653a.jpg" />
+    <Content Include="uploads\videos\thumbnails\166-5bc349d68c7f8.jpg" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\upload.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Home\editVideo.cshtml" />
+    <Content Include="Views\Home\likedVideos.cshtml" />
+    <Content Include="Views\Home\profile.cshtml" />
+    <Content Include="Views\Home\search.cshtml" />
+    <Content Include="Views\SignIn\Index.cshtml" />
+    <Content Include="Views\SignUp\Index.cshtml" />
+    <Content Include="Views\Home\subscriptions.cshtml" />
+    <Content Include="Views\Home\trending.cshtml" />
+    <Content Include="Views\Home\watch.cshtml" />
+    <Content Include="Views\Setting\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="uploads\Temp\" />
+    <Folder Include="Views\Ajax\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58532</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44391/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.2.1.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
